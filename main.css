@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  background-image: url(../../Downloads/park_background.png);
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  height: 600px;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 1px solid black;
+  height: 10%;
+  width: 10%;
+  
+}
+
+.hog {
+  background-image: url('../../Downloads/159-1592477_hedgehog-clipart-cartoon-hedgehog-clipart-6268-4975-best.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
