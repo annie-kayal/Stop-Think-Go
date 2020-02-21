@@ -12,6 +12,7 @@ body {
   align-items: center;
   background-color: whitesmoke;
   background-image: url(../../Downloads/park_background.png);
+  background-repeat: no-repeat;
 }
 
 .grid {
@@ -31,6 +32,13 @@ body {
 
 .hog {
   background-image: url('../../Downloads/159-1592477_hedgehog-clipart-cartoon-hedgehog-clipart-6268-4975-best.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.car {
+  background-image: url('../../Downloads/car.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
