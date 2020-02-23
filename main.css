@@ -43,3 +43,18 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.girafee {
+  background-image: url('../../Downloads/giraffe.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.elephant {
+  
+}
+
+.grass {
+  background-color: green;
+}
