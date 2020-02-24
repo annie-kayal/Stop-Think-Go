@@ -4,17 +4,31 @@ function gameSetUp() {
   const grid = document.querySelector('.grid')
   const cells = []
   let hog = 90
-  let car = 2
-  let points = 0
+  // let giraffe = 22
+  // let elephant = 7
+  // let car = 2
+  let score = 0
+
+
+
+
   // array for obstucle position when page loads
-  const startingPositionCars = [2, 22, 42, 62, 13, 53, 64]
+  const startingPosition = [2, 22, 52, 43, 73, 15, 45, 65, 16, 36, 66, 7, 57, 28, 58]
   // array to identify the bottom of the grid
   const borderBottom = [92, 93, 94, 95, 96, 97, 98]
   // array to identify top of grid 
   const borderTop = [3, 4, 5, 6, 7, 8, 9]
+  console.log(borderTop)
   // array to be called on for random generation of class
-  const obstacleClassArray = ['car', 'giraffe', 'elephant', 'car', 'car']
-console.log(borderTop)
+  const obstacleClassArray = ['car', 'giraffe', 'elephant']
+
+  // choose random element from class list array 
+  function obstucleSelectionArray() {
+    const randomObstacleSelectionArray = obstacleClassArray[Math.floor(Math.random() * obstacleClassArray.length)]
+    return randomObstacleSelectionArray
+  }
+
+
 
   // create grid
   for (let i = 0; i < gridCellCount; i++) {
@@ -23,12 +37,15 @@ console.log(borderTop)
     if (i === hog) {
       cell.classList.add('hog')
     }
-    if (startingPositionCars.includes(i)) {
+    if (startingPosition.includes(i)) {
       cell.classList.add('car')
     }
     cells.push(cell)
     grid.appendChild(cell)
+    cell.id = i
   }
+
+
   // move the hedgehog
   document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight') {
@@ -62,62 +79,58 @@ console.log(borderTop)
     }
   })
 
+  if (hog === cells[9]) {
+    score + 10
+    return score
+  } console.log(score)
+
+
+
+
+
+
   // make car move every second at start of game
-  const carInterval = setInterval(() => {
-    for (let i = 0; i < startingPositionCars.length; i++) {
-      if (borderBottom.includes(startingPositionCars[i])) {
-        // wraps cars around
-        cells[startingPositionCars[i]].classList.remove('car')
-        startingPositionCars[i] -= (width ** 2 - 10)
-        cells[startingPositionCars[i]].classList.add('car')
+  const obstacleInterval = setInterval(() => {
+    for (let i = 0; i < startingPosition.length; i++) {
+      //////////// WRAP AROUND ///////////
+      if (borderBottom.includes(startingPosition[i])) {
+
+        // wraps obstucles around
+        if (cells[startingPosition[i]].classList.contains('car')) {
+          cells[startingPosition[i]].classList.remove('car')
+          startingPosition[i] -= (width ** 2 - 10)
+          cells[startingPosition[i]].classList.add(obstucleSelectionArray())
+        } else if (cells[startingPosition[i]].classList.contains('giraffe')) {
+          cells[startingPosition[i]].classList.remove('giraffe')
+          startingPosition[i] -= (width ** 2 - 10)
+          cells[startingPosition[i]].classList.add(obstucleSelectionArray())
+        } else if (cells[startingPosition[i]].classList.contains('elephant')) {
+          cells[startingPosition[i]].classList.remove('elephant')
+          startingPosition[i] -= (width ** 2 - 10)
+          cells[startingPosition[i]].classList.add(obstucleSelectionArray())
+        }
       } else {
-        // makes cars move
-        cells[startingPositionCars[i]].classList.remove('car')
-        startingPositionCars[i] += width
-        cells[startingPositionCars[i]].classList.add('car')
+        ///////// NO WRAP, JUST MOVEMENT
+        // makes obstacles move
+        if (cells[startingPosition[i]].classList.contains('car')) {
+          cells[startingPosition[i]].classList.remove('car')
+          startingPosition[i] += width
+          cells[startingPosition[i]].classList.add('car')
+        } else if (cells[startingPosition[i]].classList.contains('giraffe')) {
+          cells[startingPosition[i]].classList.remove('giraffe')
+          startingPosition[i] += width
+          cells[startingPosition[i]].classList.add('giraffe')
+        } else if (cells[startingPosition[i]].classList.contains('elephant')) {
+          cells[startingPosition[i]].classList.remove('elephant')
+          startingPosition[i] += width
+          cells[startingPosition[i]].classList.add('elephant')
+        }
       }
     }
-  }, 900)
+  }, 600)
 
-  // choose random element from class list array 
-  function obstucleSelectionArray() {
-    const randomObstacleSelectionArray = obstacleClassArray[Math.floor(Math.random() * obstacleClassArray.length)]
-    return randomObstacleSelectionArray
-  }
-
-  // choose random top row cell 
-  function rowSelector() {
-    const randomTopRow = [Math.ceil(Math.random() * borderTop.length)]
-    return randomTopRow
-  }
-
-  // select random row & class every 3 seconds
-  const newObstacle = setInterval(() => {
-      console.log(borderBottom.contains('car'))
-    // console.log(obstucleSelectionArray(), rowSelector())
-  }, 3000)
-
-  // if you hit the bottom, if sttements to see what the class is per element
-  // in obstucleClassArray 
-  
-
-
+  // scoring system
 
 }
-
-// const newObstucle = setInterval(() => {
-//   rowSelector()
-// for ( let i = 0; i < obstucleSelectionArray; i++)
-//   if (borderBottom[i] === 'giraffe') {
-//     borderBottom.classList.remove('giraffe')
-//     obstucleSelectionArray()
-//     clearInterval(newObstucle)
-//   } else if (obstucleSelectionArray === 'elephant') {
-//     borderBottom.classList.contains('elephant')
-//   } else if (obstucleSelectionArray === 'car') {
-//     borderBottom.classList.contains('car')
-//   }
-// }, 3000)
-// console.log(newObstucle())
 
 window.addEventListener('DOMContentLoaded', gameSetUp)

@@ -44,15 +44,31 @@ body {
   background-position: center;
 }
 
-.girafee {
-  background-image: url('../../Downloads/giraffe.jpg');
+.score {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 300px;
+  border: 5px solid green;
+  margin: 20px;
+  align-content: center;
+  justify-content: center;
+  font-size: large;
+  color: green;
+}
+
+.giraffe {
+  background-image: url('../../Downloads/IMGBIN_giraffe-cartoon-greeting-card-birthday-png_7MUCQqV5.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .elephant {
-  
+  background-image: url('../../Downloads/elephant.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .grass {
