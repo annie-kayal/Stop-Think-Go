@@ -4,10 +4,9 @@ function gameSetUp() {
   const grid = document.querySelector('.grid')
   const cells = []
   let hog = 90
-  // let giraffe = 22
-  // let elephant = 7
-  // let car = 2
   let score = 0
+  const houseCells = [9, 39, 69, 99]
+  const scoring = document.getElementsByClassName('score')[0]
 
 
 
@@ -18,7 +17,6 @@ function gameSetUp() {
   const borderBottom = [92, 93, 94, 95, 96, 97, 98]
   // array to identify top of grid 
   const borderTop = [3, 4, 5, 6, 7, 8, 9]
-  console.log(borderTop)
   // array to be called on for random generation of class
   const obstacleClassArray = ['car', 'giraffe', 'elephant']
 
@@ -55,6 +53,7 @@ function gameSetUp() {
       cells[hog].classList.remove('hog')
       hog += 1
       cells[hog].classList.add('hog')
+      checkWin()
     } else if (event.key === 'ArrowLeft') {
       if (hog === 0) {
         return
@@ -62,6 +61,7 @@ function gameSetUp() {
       cells[hog].classList.remove('hog')
       hog -= 1
       cells[hog].classList.add('hog')
+      checkWin()
     } else if (event.key === 'ArrowUp') {
       if (hog < width) {
         return
@@ -69,6 +69,7 @@ function gameSetUp() {
       cells[hog].classList.remove('hog')
       hog -= width
       cells[hog].classList.add('hog')
+      checkWin()
     } else if (event.key === 'ArrowDown') {
       if (hog > cells.length - width - 1) {
         return
@@ -76,18 +77,15 @@ function gameSetUp() {
       cells[hog].classList.remove('hog')
       hog += width
       cells[hog].classList.add('hog')
+      checkWin()
     }
   })
 
-  if (hog === cells[9]) {
-    score + 10
-    return score
-  } console.log(score)
-
-
-
-
-
+  // add houses to the grid
+  cells[9].classList.add('house')
+  cells[39].classList.add('house')
+  cells[69].classList.add('house')
+  cells[99].classList.add('house')
 
   // make car move every second at start of game
   const obstacleInterval = setInterval(() => {
@@ -130,7 +128,49 @@ function gameSetUp() {
   }, 600)
 
   // scoring system
+  const checkWin = function () {
+    if (hog === 9) {
+      cells[9].classList.remove('hog')
+      cells[9].classList.remove('house')
+      cells[9].classList.add('hog-home')
+      score += 100
+      scoring.innerHTML = score
+      hog = 90
+      cells[90].classList.add('hog')
+    } else if (hog === 39) {
+      cells[39].classList.remove('house')
+      cells[39].classList.add('hog-home')
+      cells[39].classList.remove('hog')
+      hog = 90
+      cells[90].classList.add('hog')
+      score += 100
+      scoring.innerHTML = score
+    } else if (hog === 69) {
+      cells[69].classList.remove('house')
+      cells[69].classList.add('hog-home')
+      cells[69].classList.remove('hog')
+      hog = 90
+      cells[90].classList.add('hog')
+      score += 100
+      scoring.innerHTML = score
+    } else if (hog === 99) {
+      cells[99].classList.remove('house')
+      cells[99].classList.add('hog-home')
+      cells[99].classList.remove('hog')
+      hog = 90
+      cells[90].classList.add('hog')
+      score += 100
+      scoring.innerHTML = score
+    } if (score === 400) {
+      score += 400
+      scoring.innerHTML = score
+    }
+  }
 
+  // if (houseCells.classList.von('hog-home')) {
+  //   score += 400
+  //   scoring.innerHTML = score
+  // }
 }
 
 window.addEventListener('DOMContentLoaded', gameSetUp)
