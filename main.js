@@ -161,16 +161,38 @@ function gameSetUp() {
       cells[90].classList.add('hog')
       score += 100
       scoring.innerHTML = score
+
+      // bonus score if all hedgehoges made it home!
     } if (score === 400) {
       score += 400
       scoring.innerHTML = score
     }
   }
 
-  // if (houseCells.classList.von('hog-home')) {
-  //   score += 400
-  //   scoring.innerHTML = score
-  // }
+  // collison 
+  const checkCollison = setInterval(() => {
+    if (cells[hog].classList.contains('car')) {
+      cells[hog].classList.remove('hog')
+      hog = 90
+      cells[90].classList.add('hog')
+    } else if (cells[hog].classList.contains('giraffe')) {
+      cells[hog].classList.remove('hog')
+      hog = 90
+      cells[90].classList.add('hog')
+    } else if (cells[hog].classList.contains('elephant')) {
+      cells[hog].classList.remove('hog')
+      hog = 90
+      cells[90].classList.add('hog')
+    }
+  }, 400)
+
+  console.log(checkCollison)
 }
+
+// if (houseCells.classList.von('hog-home')) {
+//   score += 400
+//   scoring.innerHTML = score
+// }
+
 
 window.addEventListener('DOMContentLoaded', gameSetUp)
