@@ -12,6 +12,7 @@ body {
   align-items: center;
   background-color: whitesmoke;
   background-image: url(../../Downloads/park_background.png);
+  background-size: cover;
   background-repeat: no-repeat;
 }
 

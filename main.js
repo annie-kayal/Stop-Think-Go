@@ -18,6 +18,10 @@ function gameSetUp() {
   const borderBottom = [92, 93, 94, 95, 96, 97, 98]
   // array to be called on for random generation of class
   const obstacleClassArray = ['car', 'giraffe', 'elephant']
+  // array for left side
+  const gridLeft = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+  // array for right side 
+  const gridRight = [9, 19, 29, 39, 49, 59, 69, 79, 89]
 
   // choose random element from class list array 
   function obstucleSelectionArray() {
@@ -44,7 +48,9 @@ function gameSetUp() {
   // move the hedgehog
   document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight') {
-      if (hog === cells.length - 1) {
+      if (gridRight.includes(hog)) {
+        return
+      } else if (hog === cells.length - 1) {
         return
       }
       cells[hog].classList.remove('hog')
@@ -52,7 +58,9 @@ function gameSetUp() {
       cells[hog].classList.add('hog')
       checkWin()
     } else if (event.key === 'ArrowLeft') {
-      if (hog === 0) {
+      if (gridLeft.includes(hog)) {
+        return
+      } else if (hog === 0) {
         return
       }
       cells[hog].classList.remove('hog')
@@ -122,7 +130,7 @@ function gameSetUp() {
         }
       }
     }
-  }, 600)
+  }, 300)
 
   // scoring system
   const checkWin = function () {
