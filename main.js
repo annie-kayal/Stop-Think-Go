@@ -5,8 +5,9 @@ function gameSetUp() {
   const cells = []
   let hog = 90
   let score = 0
-  const houseCells = [9, 39, 69, 99]
+  let lives = 3
   const scoring = document.getElementsByClassName('score')[0]
+  const life = document.getElementsByClassName('lives')[0]
 
 
 
@@ -15,8 +16,6 @@ function gameSetUp() {
   const startingPosition = [2, 22, 52, 43, 73, 15, 45, 65, 16, 36, 66, 7, 57, 28, 58]
   // array to identify the bottom of the grid
   const borderBottom = [92, 93, 94, 95, 96, 97, 98]
-  // array to identify top of grid 
-  const borderTop = [3, 4, 5, 6, 7, 8, 9]
   // array to be called on for random generation of class
   const obstacleClassArray = ['car', 'giraffe', 'elephant']
 
@@ -40,9 +39,7 @@ function gameSetUp() {
     }
     cells.push(cell)
     grid.appendChild(cell)
-    cell.id = i
   }
-
 
   // move the hedgehog
   document.addEventListener('keydown', (event) => {
@@ -171,28 +168,33 @@ function gameSetUp() {
 
   // collison 
   const checkCollison = setInterval(() => {
+    if (lives === 0) {
+      cells[hog].classList.remove('hog')
+      clearInterval(obstacleInterval)
+    }
+
     if (cells[hog].classList.contains('car')) {
       cells[hog].classList.remove('hog')
+      lives -= 1
+      life.innerHTML = lives
       hog = 90
       cells[90].classList.add('hog')
     } else if (cells[hog].classList.contains('giraffe')) {
       cells[hog].classList.remove('hog')
+      lives -= 1
+      life.innerHTML = lives
       hog = 90
       cells[90].classList.add('hog')
     } else if (cells[hog].classList.contains('elephant')) {
       cells[hog].classList.remove('hog')
+      lives -= 1
+      life.innerHTML = lives
       hog = 90
       cells[90].classList.add('hog')
-    }
+    } 
   }, 400)
 
-  console.log(checkCollison)
+
 }
-
-// if (houseCells.classList.von('hog-home')) {
-//   score += 400
-//   scoring.innerHTML = score
-// }
-
 
 window.addEventListener('DOMContentLoaded', gameSetUp)
