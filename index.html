@@ -8,13 +8,29 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Stop, Think & Go!</h1>
-  <main>
-    <p>SCORE</p>
-  <div class="score">0</div>
-  <p>Lives</p>
-  <div class="lives">3</div>
-  <div class="grid"></div>
-</main>
+  <p id="livesTitle">Lives</p>
+  <p class="livesRemaining">3</p>
+  <div id="title">
+    <div id="main">
+      <div id="viewScore">
+      <p  class="titles">SCORE</p>
+      <div class="score">0</div>
+    </div>
+    <p class="header" id="stop"> Stop</p>
+    <p class="header" id="think"> Think</p>
+    <p class="header" id="go"> &<span>Go!</span></p>
+  </div>
+    <div id="startButtonContainer">
+      <button id="start">Press to play!</button>
+    </div>
+    <div id="time-container">
+    <p id="timeText">Time left
+      <p id="timer">30 seconds</p>
+    </p>
+  </div>
+  </div>
+</div>
+<div class="grid"></div>
+
 </body>
 </html>

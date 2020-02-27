@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Cartoon';
+  src: URL('../project-1/Cartoonero.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,34 +11,172 @@
 
 body {
   height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
   background-image: url(../../Downloads/park_background.png);
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
-.main {
-  display: flex;
-  align-items: center;
+.red {
+  background-color: red;
 }
+
+#title {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+#livesTitle {
+  padding: 3px;
+  border-radius: 5px;
+  font-family: 'Cartoon';
+  font-size: 40px;
+  color: orange;
+  text-shadow: 1px 1px white;
+  position: absolute;
+  right: 350px;
+  top: 120px;
+}
+
+.livesRemaining {
+  position: absolute;
+  right: 370px;
+  top: 165px;
+  font-family: 'Cartoon';
+  font-size: 60px;
+  font-weight: 800;
+  color: orange;
+  text-shadow: 1px 1px white;
+}
+
+#main {
+  display: flex;
+  font-family: 'Cartoon';
+}
+
+#viewScore {
+  position: absolute;
+  left: 25%;
+  top: 15%;
+}
+
+button {
+  height: 50px;
+  padding: 0px 20px;
+    border-radius: 20px;
+    font-family: 'Cartoon';
+    font-size: 27px;
+    background: orange;
+    color: white;
+    border: 2.3px solid white;
+    text-shadow: 2px px grey;
+    box-shadow: 3px 3px 3px 3px grey;
+    outline: none;
+}
+
+.header {
+  color: rgb(232, 172, 21);
+  -webkit-text-stroke: 3px black; 
+  display: block;
+  font-size: 110px;
+  text-decoration: underline black;
+}
+
+#stop {
+  color: red;
+}
+
+#go {
+  color: green;
+}
+
+section {
+  height: 300px;
+  width: 200px;
+  border: 3px groove yellowgreen;
+  border-radius: 20px;
+  background-color: rgba(110, 194, 103, .7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  left: 20px;
+}
+
+#timeText {
+  font-size: 31px;
+  color: green;
+  font-weight: bold;
+}
+
+#time-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+#timer {
+  font-size: 25px;
+  font-weight: bold;
+  background: transparent;
+  color:black;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+
+}
+
+.titles {
+  color: orange;
+  text-shadow: 1px 1px white;
+  font-family: 'Cartoon';
+  font-size: 40px;
+}
+.score {
+  font-family: 'Cartoon';
+  display: flex;
+  margin: 0 auto;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 800;
+  color: orange;
+  text-shadow: 1px 1px white;
+}
+
+#startButtonContainer {
+  margin: 10px;
+}
+
 .grid {
+  border: 10px ridge rgb(217, 148, 20);
+  border-radius: 10px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   width: 900px;
-  height: 600px;
+  height: 550px;
   flex-wrap: wrap;
+  position: absolute;
 }
 
 .cell {
-  border: 1px solid black;
   height: 10%;
   width: 10%;
-  
+  background-color: grey;
 }
+
+
 
 .hog {
   background-image: url('../../Downloads/159-1592477_hedgehog-clipart-cartoon-hedgehog-clipart-6268-4975-best.png');
@@ -57,25 +200,7 @@ body {
   background-position: center;
 }
 
-.score {
-  display: flex;
-  flex-direction: row;
-  height: 50px;
-  width: 100px;
-  border: 5px dashed green;
-  margin: 20px;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 800;
-  color: green;
-}
 
-p {
-  font-size: 20px;
-  font-weight: 800;
-  color: green;
-}
 .giraffe {
   background-image: url('../../Downloads/IMGBIN_giraffe-cartoon-greeting-card-birthday-png_7MUCQqV5.png');
   background-size: contain;
