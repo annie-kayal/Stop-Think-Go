@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
-  background-image: url(../../Downloads/park_background.png);
+  background-image: url(/images/park_background.png);
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -159,7 +159,8 @@ section {
 }
 
 .grid {
-  border: 10px ridge rgb(217, 148, 20);
+  border-left: 15px ridge rgb(217, 148, 20);
+  border-right: 15px ridge rgb(217, 148, 20);
   border-radius: 10px;
   margin-top: 100px;
   display: flex;
@@ -174,12 +175,13 @@ section {
   height: 10%;
   width: 10%;
   background-color: grey;
+  border: 1px solid black;
 }
 
 
 
 .hog {
-  background-image: url('../../Downloads/159-1592477_hedgehog-clipart-cartoon-hedgehog-clipart-6268-4975-best.png');
+  background-image: url('/images/159-1592477_hedgehog-clipart-cartoon-hedgehog-clipart-6268-4975-best.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -188,13 +190,13 @@ section {
 }
 
 .hog-home {
-  background-image: url('../../Downloads/hog-home.gif');
+  background-image: url('/images/hog-home.gif');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .car {
-  background-image: url('../../Downloads/car.png');
+  background-image: url('/images/car.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -202,21 +204,21 @@ section {
 
 
 .giraffe {
-  background-image: url('../../Downloads/IMGBIN_giraffe-cartoon-greeting-card-birthday-png_7MUCQqV5.png');
+  background-image: url('/images/IMGBIN_giraffe-cartoon-greeting-card-birthday-png_7MUCQqV5.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .elephant {
-  background-image: url('../../Downloads/elephant.png');
+  background-image: url('images/elephant.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .house {
-  background-image: url('../../Downloads/IMGBIN_cartoon-drawing-animation-dessin-animxe9-png_zZbZPiyB.png');
+  background-image: url('images/IMGBIN_cartoon-drawing-animation-dessin-animxe9-png_zZbZPiyB.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

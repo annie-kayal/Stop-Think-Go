@@ -30,11 +30,7 @@ function gameSetUp() {
   // array for right side 
   const gridRight = [9, 19, 29, 39, 49, 59, 69, 79, 89, 99]
 
-  // function road() {
-  //   for (let i = 0; i < cells; i++)
-  //     cells[i].classList.add('red')
-  // }
-  // road()
+
 
   // choose random element from class list array 
   function obstucleSelectionArray() {
@@ -48,7 +44,7 @@ function gameSetUp() {
     const cell = document.createElement('div')
     cell.classList.add('cell')
     if (gridLeft.includes[i]) {
-      gridLeft.classList.add('')
+      console.log('hello')
     }
     if (i === hog) {
       cell.classList.add('hog')
@@ -232,14 +228,15 @@ function gameSetUp() {
         cells[hog].classList.remove('hog')
         clearInterval(obstacleInterval)
         timer.innerHTML = '30 seconds'
-        lives.innerHTML = ''
         clearInterval(timeleft)
+        location.reload()
       } else {
         counter -= 1
         timer.innerHTML = `${counter} seconds`
       }
     }, 1000)
   }
+
 
 
 }
