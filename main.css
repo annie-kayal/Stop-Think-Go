@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Cartoon';
-  src: URL('../project-1/Cartoonero.ttf') format('truetype');
+  src: URL('./Cartoonero.ttf') format('truetype');
 }
 
 * {
