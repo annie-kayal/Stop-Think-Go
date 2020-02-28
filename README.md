@@ -57,6 +57,8 @@ I have choosen to hide my grid during gameplay for styling purposes, but can be 
 
 ![](/images/gridScreenshot.png)
 
+This shot is taken as you enter the page and as shown, I have my character and obstacles already in place. This is placed within the for loop 
+
 
 
 

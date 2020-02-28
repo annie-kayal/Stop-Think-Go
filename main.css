@@ -41,14 +41,14 @@ body {
   color: orange;
   text-shadow: 1px 1px white;
   position: absolute;
-  right: 350px;
-  top: 120px;
+  right: 500px;
+  top: 150px;
 }
 
 .livesRemaining {
   position: absolute;
-  right: 370px;
-  top: 165px;
+  right: 525px;
+  top: 200px;
   font-family: 'Cartoon';
   font-size: 60px;
   font-weight: 800;
