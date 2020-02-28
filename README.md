@@ -57,7 +57,16 @@ I have choosen to hide my grid during gameplay for styling purposes, but can be 
 
 ![](/images/gridScreenshot.png)
 
-This shot is taken as you enter the page and as shown, I have my character and obstacles already in place. This is placed within the for loop 
+This shot is taken as you enter the page and as shown, I have my character and obstacles already in place. This is placed within the for loop where I created my grid. After adding my cells, I have defined an if statement within this loop for my hedgehog character to appear at the given cell I have choosen. 
+
+```js 
+let hog = 90
+
+ if (i === hog) {
+      cell.classList.add('hog')
+    }
+  ```
+
 
 
 

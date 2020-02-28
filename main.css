@@ -41,13 +41,13 @@ body {
   color: orange;
   text-shadow: 1px 1px white;
   position: absolute;
-  right: 500px;
+  right: 450px;
   top: 150px;
 }
 
 .livesRemaining {
   position: absolute;
-  right: 525px;
+  right: 480px;
   top: 200px;
   font-family: 'Cartoon';
   font-size: 60px;
@@ -85,7 +85,7 @@ button {
   color: rgb(232, 172, 21);
   -webkit-text-stroke: 3px black; 
   display: block;
-  font-size: 110px;
+  font-size: 155px;
   text-decoration: underline black;
 }
 
