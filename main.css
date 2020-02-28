@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
-  background-image: url(/images/park_background.png);
+  background-image: url('images/park_background.png');
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -181,7 +181,7 @@ section {
 
 
 .hog {
-  background-image: url('/images/159-1592477_hedgehog-clipart-cartoon-hedgehog-clipart-6268-4975-best.png);
+  background-image: url('images/159-1592477_hedgehog-clipart-cartoon-hedgehog-clipart-6268-4975-best.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -190,13 +190,13 @@ section {
 }
 
 .hog-home {
-  background-image: url('/images/hog-home.gif');
+  background-image: url('images/hog-home.gif');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .car {
-  background-image: url('/images/car.png');
+  background-image: url('images/car.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -204,7 +204,7 @@ section {
 
 
 .giraffe {
-  background-image: url('/images/IMGBIN_giraffe-cartoon-greeting-card-birthday-png_7MUCQqV5.png');
+  background-image: url('images/IMGBIN_giraffe-cartoon-greeting-card-birthday-png_7MUCQqV5.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -224,5 +224,4 @@ section {
   background-position: center;
   z-index: 0;
   position: relative;
-
 }

@@ -43,9 +43,6 @@ function gameSetUp() {
   for (let i = 0; i < gridCellCount; i++) {
     const cell = document.createElement('div')
     cell.classList.add('cell')
-    if (gridLeft.includes[i]) {
-      console.log('hello')
-    }
     if (i === hog) {
       cell.classList.add('hog')
     }
@@ -192,8 +189,10 @@ function gameSetUp() {
     // collison 
     const checkCollison = setInterval(() => {
       if (lives === 0) {
-        cells[hog].classList.remove('hog')
         clearInterval(obstacleInterval)
+        clearInterval(timeleft)
+        location.reload()
+        cells[hog].classList.remove('hog')
       }
 
       if (cells[hog].classList.contains('car')) {
@@ -237,8 +236,7 @@ function gameSetUp() {
     }, 1000)
   }
 
-
-
 }
+
 
 window.addEventListener('DOMContentLoaded', gameSetUp)

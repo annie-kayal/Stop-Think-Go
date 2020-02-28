@@ -53,6 +53,9 @@ Play the game ---> here
     grid.appendChild(cell)
     }
   ```
+I have choosen to hide my grid during gameplay for styling purposes, but can be viewed below:
+
+![](/images/gridScreenshot.png)
 
 
 
