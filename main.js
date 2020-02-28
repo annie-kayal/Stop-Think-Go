@@ -142,7 +142,7 @@ function gameSetUp() {
           }
         }
       }
-    }, 200)
+    }, 300)
 
     // scoring system
     const checkWin = function () {
