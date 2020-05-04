@@ -13,7 +13,7 @@ As shown in the advert, and many other variations, unexpected things can be on t
  
 This first project focused on utilising our new skills in HTML CSS and JavaScript and used DOM manipulation which we had learnt in the weeks before.
  
-Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out the Github repo here
+Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out the Github repo [here](https://github.com/annie-kayal/Stop-Think-Go)
  
 ## The Brief
  
