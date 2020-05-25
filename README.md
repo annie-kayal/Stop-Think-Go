@@ -7,7 +7,7 @@
  
 This was my first project during the Software Engineering Course at GA in London. Our brief was to create a grid-based game where users are able to play in the browser using HTML, CSS and JavaScript. The project was to be completed **individually** and within **one week**.
  
-I chose to create my own version of 'Frogger', where the goal is to guide a family of frogs home while avoiding moving obstacles. To implement my own creativity into the project I chose to adapt the theme to help hedgehogs across a busy road. This is based on the road safety adverts which ran in previous years to teach children on how to cross roads safety. Watch the advert I based it on [here](https://www.youtube.com/watch?v=3hplRpOdOXE)
+I chose to create my own version of 'Frogger', where the goal is to guide a family of frogs home while avoiding moving obstacles. To implement my own creativity into the project, I chose to adapt the theme to help hedgehogs across a busy road. This is based on the road safety adverts which ran in previous years to teach children on how to cross roads safety. Watch the advert I based it on [here](https://www.youtube.com/watch?v=3hplRpOdOXE).
  
 As shown in the advert, and many other variations, unexpected things can be on the road. It's not only important to watch out for speeding cars but also elephants and giraffes. I incorporated these obstacles into my version of the game adding a fun twist to associate the game with the series.
  
@@ -52,7 +52,7 @@ Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out
    const cells = []
    ```
  
-   - The first step creating the grid through JavaScript was retrieving the div in our HTML document. This is the first variable and uses the DOM manipulation `querySelector` method. Thorugh this method I was able to return the div element through it's given class.
+   - The first step creating the grid through JavaScript was retrieving the div in our HTML document. This is the first variable and uses the DOM manipulation `querySelector` method. Through this method I was able to return the div element through it's given class.
 
    - The width variable was the next to be declared. Here I had to make the decision to the extent of my grid size. The variable is assigned the number 10, and is used in the `gridCellCount` variable. Here the width is multiplied by itself, and would generate a grid where the height and width are the same. In this case, 10x10.
  
@@ -61,11 +61,11 @@ Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out
    let hog = 90
    const startingPosition = [2, 22, 52, 43, 73, 15, 45, 65, 16, 36, 66, 7, 57, 28, 58]
    ```
-   - The first variable, known as `hog`, is the starting position of our hedgehog character when the game begins. When one of the hedgehoges is guided to their home safely, another will appear at the position of 90. This is declared as a let. As we will see further along, the position of the hedgehog character changes whilst we play the game, therefore meaning we cannot use `const`.
+   - The first variable, known as `hog`, is the starting position of our hedgehog character when the game begins. When one of the hedgehogs is guided to their home safely, another will appear at the position of 90. This is declared as a `let`. As we will see further along, the position of the hedgehog character changes whilst we play the game, therefore meaning we cannot use `const`.
 
    - The `startingPosition` variable is an array of numbers. This determines the position of the cars which first appear on the page. The numbers which are shown are where each car would be in relation to the `girdCellCount`.
  
-- The for loop below rendered the grid through a series of steps:
+- The `for` loop below rendered the grid through a series of steps:
  
    ```js
     for (let i = 0; i < gridCellCount; i++) {
@@ -82,7 +82,7 @@ Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out
    }
    ```
 
-   - Before we use any variables previously declared, the loop is given a variable `i` which is equal to 0. This variable then iterates through the `gridCellCount` variable. As previously mentioned the gridCellCount multiplies the width by itself. As a result, the variable is equal to 100 with width being declared as 10. This is interchangeable if I later decided to alter my grid to be larger or smaller. 
+   - Before we use any variables previously declared, the loop is given a variable `i` which is equal to 0. This variable then iterates through the `gridCellCount` variable. As previously mentioned, the gridCellCount multiplies the width by itself. As a result, the variable is equal to 100 with width being declared as 10. This is interchangeable if I later decide to alter my grid to be larger or smaller. 
 
 - Now for every number within the `gridCellCount`, the following occurs: 
 
@@ -199,13 +199,13 @@ After implementing this, we are able to render the grid shown below. For the pur
 
   - Once the player reaches these cells, the class 'house' is removed and replaced with another deemed 'hog-home'. This indicates the hedgehog has been taken safety home and the user is awarded **100 points!!** 
 
-  - In order to keep track of the score, a scoreboard is visible. For this to be functional, I retrived the element through `getItemByClassName` (under the variable `scoring`) method. I also created a variable `score = 0`. This starts every player with 0 at the beginning of gameplay. 
+  - In order to keep track of the score, a scoreboard is visible. For this to be functional, I retrieved the element through `getItemByClassName` (under the variable `scoring`) method. I also created a variable `score = 0`. This starts every player with 0 at the beginning of gameplay. 
 
   - Once a player reaches cells which allow them points, the score variable is updated by 100 and the score is displayed on the element by changing the innerHTML of the variable as shown below:
   
   `scoring.innerHTML = score`. 
 
-- As stated at the beginning, obstacles were put in various cells to give the game difficulty. This involved three stages, rendering the obstacles to move on the grid, checking for collison (if the hedgehog came into contact with an obstacle) and picking obstacles randomly. 
+- As stated at the beginning, obstacles were put in various cells to give the game difficulty. This involved three stages, rendering the obstacles to move on the grid, checking for collision (if the hedgehog came into contact with an obstacle) and picking obstacles randomly. 
 
 ### Obstacles
  
@@ -248,9 +248,9 @@ Selecting an obstacle to be rendered randomly was another component to be solved
  
   - In order for the function to run, a predetermined array needs to be declared of the obstacles which are available in the game. This is `obstacleClassArray`. 
 
-  - The function itself has a new variable within it which is ultimately returned at the end. The variable takes the `obstacleClassArray` and runs two methods. The `Math.floor` and `Math.random`. The first method ensures the array selects an element from 0 despite what length it may be. The second, is where the magic happens. The `Math.random` method randomly selects an element from the array and returns it, thus achieveing how obstacles are chosen at random.   
+  - The function itself has a new variable within it which is ultimately returned at the end. The variable takes the `obstacleClassArray` and runs two methods. The `Math.floor` and `Math.random`. The first method ensures the array selects an element from 0 despite what length it may be. The second, is where the magic happens. The `Math.random` method randomly selects an element from the array and returns it, thus achieving how obstacles are chosen at random.   
 
-In this instance, the game is over once the timer hits 0. But another way for the game to end is if the player runs out of lives. This is where we defined our collison checks to see if the hedgehog character comes into contact with any obstacles. 
+In this instance, the game is over once the timer hits 0. But another way for the game to end is if the player runs out of lives. This is where we defined our collision checks to see if the hedgehog character comes into contact with any obstacles. 
  
 ```js 
 	 let lives = 3
