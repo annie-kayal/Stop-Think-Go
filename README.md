@@ -39,7 +39,7 @@ Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out
  
 ## The Board
  
-- The board was the first area developed in this game and was executed using JavaScript. Shown below is a div element with the class 'grid' in my HTML file. This is a representation of where the grid would be on the webpage.
+- The board was the first area developed in this game and was executed using JavaScript. Shown below is a div element with the class `grid` in my HTML file. This is a representation of where the grid would be on the webpage.
  ```js
  <div class="grid"></div>
  ```
@@ -52,9 +52,9 @@ Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out
    const cells = []
    ```
  
-   - The first step creating the grid through JavaScript was retrieving the div in our HTML document. This is the first variable and uses the DOM manipulation `querySelector` method. Through this method I was able to return the div element through it's given class.
+   - The first step to create the grid using JavaScript was to retrieving the div in our HTML document. This is the first variable and uses the DOM manipulation `querySelector` method. Through this method I was able to return the div element through it's given class and store it into the variable `grid`.
 
-   - The width variable was the next to be declared. Here I had to make the decision to the extent of my grid size. The variable is assigned the number 10, and is used in the `gridCellCount` variable. Here the width is multiplied by itself, and would generate a grid where the height and width are the same. In this case, 10x10.
+   - The width variable was the next to be declared. Here I had to make the decision on the extent of my grid size. The variable is assigned the number 10, and is used in the `gridCellCount` variable. Here the width is multiplied by itself, and would generate a grid where the height and width are the same. In this case, 10x10.
  
 - Having declared these variables, the next step was to render the grid on the webpage and place my hedgehog character and obstacles. This was deployed using a seperate `for loop`. Within this loop, two additional variables are used and therefore need to be declared:
  ```js
@@ -96,7 +96,7 @@ Play the game [here](https://annie-kayal.github.io/Stop-Think-Go/) and check out
 
 	- The second statement functions in a similar way. Once the for loop reaches any of the numbers within our `startingPositions` array, it will append the class of ‘car’ to the created cell. This results in the static cars rendered at the beginning of gameplay. 
  
-After implementing this, we are able to render the grid shown below. For the purpose of showing the grid, I have removed the background colour and added the black border on each individual cells to indicate the for loop at work: 
+After implementing this, we are able to render the grid shown below. For the purpose of displaying the grid, I have removed the background colour and added the black border on each individual cells to indicate the for loop at work: 
 
 <img src='https://i.imgur.com/qNTb2OL.png' width='400'>
 
